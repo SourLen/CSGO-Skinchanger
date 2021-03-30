@@ -14,7 +14,7 @@ pip install requirements.txt
 ```
 3. Configure the skins.txt file to your wishes. Get the skin ids [here](https://totalcsgo.com/skin-ids)
 
-4. Run the main.py file.
+4. Run the Skinchanger.py file.
 
 ## Known Errors
 1. Skin doesnt always change.
