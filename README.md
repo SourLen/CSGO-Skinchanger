@@ -2,12 +2,12 @@
 
 
 ## WARNING
-The Skinchanger is NOT fully working! It changes the skin about 80% of the time in MM but youb can Force it to update, when you press F6, again with an 80% chance to update.
+The Skinchanger is NOT fully working! It changes the skin about ~80% of the time in MM but you can Force it to update by pressing F6, again with an ~80% chance to update.
 
 ## How to USE
-1.Download the main.py and the requirements.txt file or clone the repository.
+1. Download the main.py and the requirements.txt file or clone the repository.
 
-2.On first installation run 
+2. On first installation run 
 ```
 pip install requirements.txt
 
