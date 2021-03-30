@@ -43,31 +43,36 @@ def GetForegroundWindow():
     return user32.GetForegroundWindow()
 
 def change_skin():
-    akpaint = 44
-    awppaint = 344
-    usppaint = 654
-    deaglepaint = 962
-    glockpaint = 38
-    fivepaint = 44
-    ppaint = 102
-    tecpaint = 179
-    mapaint = 309
-    mspaint = 445
-    galilpaint = 379
-    famaspaint = 260
-    augpaint = 455
-    sgpaint = 287
-    scoutpaint = 624
-    macpaint = 433
-    mpsevpaint = 102
-    mpninpaint = 734
-    pppaint = 542
-    pneunpaint = 359
-    umppaint = 37
-    magpaint = 737
-    novpaint = 537
-    sawpaint = 256
-    xmpaint = 852
+    skins = []
+    with open("skins.txt", "r", encoding='utf-8') as f:
+        for line in f.readlines():
+            skin = line.split("=")[-1].strip()
+            skins.append(int(skin))
+    akpaint = skins[0]
+    awppaint = skins[1]
+    usppaint = skins[2]
+    deaglepaint = skins[3]
+    glockpaint = skins[4]
+    fivepaint = skins[5]
+    ppaint = skins[6]
+    tecpaint = skins[7]
+    mapaint = skins[8]
+    mspaint = skins[9]
+    galilpaint = skins[10]
+    famaspaint = skins[11]
+    augpaint = skins[12]
+    sgpaint = skins[13]
+    scoutpaint = skins[14]
+    macpaint = skins[15]
+    mpsevpaint = skins[16]
+    mpninpaint = skins[17]
+    pppaint = skins[18]
+    pneunpaint = skins[19]
+    umppaint = skins[20]
+    magpaint = skins[21]
+    novpaint = skins[22]
+    sawpaint = skins[23]
+    xmpaint = skins[24]
     engine_state = pm.read_int( engine + dwClientState )
     while True:
         if not GetWindowText( GetForegroundWindow() ) == "Counter-Strike: Global Offensive":
