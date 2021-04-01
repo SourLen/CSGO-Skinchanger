@@ -47,6 +47,8 @@ def change_skin():
     with open("skins.txt", "r", encoding='utf-8') as f:
         for line in f.readlines():
             skin = line.split("=")[-1].strip()
+
+
             skins.append(int(skin))
     akpaint = skins[0]
     awppaint = skins[1]
@@ -73,6 +75,15 @@ def change_skin():
     novpaint = skins[22]
     sawpaint = skins[23]
     xmpaint = skins[24]
+    revolverpaint = skins[25]
+    czpaint = skins[26]
+    dualiespaint = skins[27]
+    p2000paint = skins[28]
+    mp5paint = skins[29]
+    negevpaint = skins[30]
+    m249paint = skins[31]
+    g3sg1paint = skins[32]
+    scarpaint = skins[33]
     engine_state = pm.read_int( engine + dwClientState )
     while True:
         if not GetWindowText( GetForegroundWindow() ) == "Counter-Strike: Global Offensive":
@@ -85,7 +96,9 @@ def change_skin():
             my_weapons = pm.read_int( local_player + m_hMyWeapons + (i - 1) * 0x4 ) & 0xFFF
             weapon_address = pm.read_int( client + dwEntityList + (my_weapons - 1) * 0x10 )
             if weapon_address:
-                weapon_id = pm.read_int( weapon_address + m_iItemDefinitionIndex )
+                weapon_id = pm.read_short( weapon_address + m_iItemDefinitionIndex )
+                
+
                 weapon_owner = pm.read_int( weapon_address + m_OriginalOwnerXuidLow )
                 seed = 420
                 if weapon_id == 7:
@@ -120,7 +133,7 @@ def change_skin():
                     fallbackpaint = galilpaint
                 elif weapon_id == 10:
                     fallbackpaint = famaspaint
-                elif weapon_id == 262152:
+                elif weapon_id == 8:
                     fallbackpaint = augpaint
                 elif weapon_id == 39:
                     fallbackpaint = sgpaint
@@ -142,10 +155,28 @@ def change_skin():
                     fallbackpaint = magpaint
                 elif weapon_id == 35:
                     fallbackpaint = novpaint
-                elif weapon_id == 262173:
+                elif weapon_id == 29:
                     fallbackpaint = sawpaint
                 elif weapon_id == 25:
                     fallbackpaint = xmpaint
+                elif weapon_id == 64:
+                    fallbackpaint = revolverpaint
+                elif weapon_id == 63:
+                    fallbackpaint = czpaint
+                elif weapon_id == 2:
+                    fallbackpaint = dualiespaint
+                elif weapon_id == 32:
+                    fallbackpaint = p2000paint
+                elif weapon_id == 23:
+                    fallbackpaint = mp5paint
+                elif weapon_id == 28:
+                    fallbackpaint = negevpaint
+                elif weapon_id == 14:
+                    fallbackpaint = m249paint
+                elif weapon_id == 11:
+                    fallbackpaint = g3sg1paint
+                elif weapon_id == 38:
+                    fallbackpaint = scarpaint
                 else:
                     continue
                 pm.write_int( weapon_address + m_iItemIDHigh, -1 )
@@ -154,7 +185,7 @@ def change_skin():
                 pm.write_int( weapon_address + m_nFallbackStatTrak, 187 )
                 pm.write_int( weapon_address + m_nFallbackSeed, seed )
                 pm.write_float( weapon_address + m_flFallbackWear, float( 0.000001 ) )
-
+        #time.sleep(20)
         if keyboard.is_pressed( "f6" ):
             pm.write_int( engine_state + 0x174, -1 )
 
