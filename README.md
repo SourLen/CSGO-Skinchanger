@@ -2,7 +2,7 @@
 
 
 ## WARNING
-The Skinchanger is NOT fully working! It changes the skin about ~80% of the time in MM but you can Force it to update by pressing F6, again with an ~80% chance to update.
+The Skinchanger is NOT fully working! It changes the skin about ~80% of the time in MM but you can Force it to update by pressing F6, again with an ~80% chance to update. This is largely due to the way external cheats and the game interact. While improvements on this may be possible, we believe that only internal cheats can provide consistent skinchangers.
 
 ## How to USE
 1. Download the main.py and the requirements.txt file or clone the repository.
