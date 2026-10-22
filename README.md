@@ -8,16 +8,11 @@ It targets the original CS:GO (`csgo.exe`) and has not been adapted to Counter-S
 
 ## Known limitations
 
-The skinchanger does not apply skins reliably. The original README put the success rate at
-roughly 80% in matchmaking, both for the automatic change and for the manual retry on F6 —
-that number comes from informal testing back then, not from a measurement. The cause appears
-to be in how an external process and the game interact; a consistent skinchanger would most
+The skinchanger does not apply skins reliably. The cause appears
+to be in how an external process and the game interact, a consistent skinchanger would most
 likely have to run internally.
 
-Other known issues:
 
-- The skin does not always change.
-- If a weapon already has a skin equipped, the skin does not change.
 
 ## Usage
 
